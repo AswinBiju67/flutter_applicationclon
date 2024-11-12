@@ -22,5 +22,24 @@ class textconst{
   "Get Upto Rs.250 Cashback on train tickets "
  ];
 
-
+ static const List offer=[{
+  "url":"assets/images/1.jpg",
+  "txt1":"Zero Convenience FEE",
+  "txt2":"Valid till: 30 Nov",
+  "txt3":"NOFFF"
+ },
+ {
+  "url":"assets/images/2.jpg",
+  "txt1":"Get Rs 100 off on train tickets",
+  "txt2":"Valid till: 30 Nov",
+  "txt3":"FESTIVE"
+ },
+ {
+  "url":"assets/images/3.jpg",
+  "txt1":"Get Rs 60 off on train tickets",
+  "txt2":"Valid till: 30 Nov",
+  "txt3":"SUPERB60"
+ },
+ ];
+  
 }

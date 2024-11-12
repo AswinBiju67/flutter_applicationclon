@@ -153,8 +153,10 @@ class _HomeTabState extends State<HomeTab> {
           count: 2,    
           effect: WormEffect(), 
        ),
-     )
-      ],)
+     ),
+     
+      ],),
+
     );
   }
 
