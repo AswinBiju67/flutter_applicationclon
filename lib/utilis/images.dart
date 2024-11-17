@@ -21,11 +21,9 @@ class imageconst{
   static const  CMETRO="assets/images/Chennai-Metro-Rail-Logo.png";
   static const  DMETRO="assets/images/2000px-Delhi_Metro_logo.svg_.png";
   static const  IFLAG="assets/images/india-flag-icon-29.jpg";
-
+  static const  UFLAG="assets/images/R.png";
   static const  MYUSER="assets/images/background-hill-station-use-desktop-web-designs_203633-1316.avif";
-
   static const  money="assets/images/pngtree-vector-cartoon-shield-with-money-icon-png-image_8971147.png";
-
   static const  irctc="assets/images/IRCTC-Symbol.png";
   static const  irctc2="assets/images/login-logo.png";
   static const  PNR="assets/images/ic-web-confirm-ticket@3x.png";
@@ -46,9 +44,11 @@ class imageconst{
  static const KNOW="assets/images/111.jpg";
  static const NOPAY="assets/images/112.jpg";
  static const WALLET="assets/images/113.jpg";
- static const Star="assets/images/114.jpg";
+ static const Star="assets/images/114.jpg"; 
+ static const BUSTIC="assets/images/224.jpg";  
+ static const BUSset1="assets/images/223.jpg";  
+ static const BUSTI2="assets/images/222.jpg";  
 
 
-  
 }
 

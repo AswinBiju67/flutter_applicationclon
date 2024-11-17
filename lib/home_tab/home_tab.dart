@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_applicationclon/gobal/booking.dart';
+import 'package:flutter_applicationclon/searchbus_screen/searchbus_screen.dart';
 import 'package:flutter_applicationclon/utilis/color.dart';
 import 'package:flutter_applicationclon/utilis/images.dart';
 import 'package:flutter_applicationclon/utilis/text.dart';
@@ -78,21 +79,26 @@ class _HomeTabState extends State<HomeTab> {
          
           Padding(
             padding: const EdgeInsets.all(10),
-            child: Container(
-              height: 50,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                color: colorconst.PRIMARY,
-                borderRadius: BorderRadius.circular(25)
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(Icons.search,color: Colors.white,size: 20,),
-                  SizedBox(width: 5,),
-                  Text("Search buses",style: GoogleFonts.montserrat(color: Colors.white,fontSize: 17,fontWeight: FontWeight.bold),)
-                ],
-              ),),
+            child: InkWell(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => SearchbusScreen(),));
+              },
+              child: Container(
+                height: 50,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: colorconst.PRIMARY,
+                  borderRadius: BorderRadius.circular(25)
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.search,color: Colors.white,size: 20,),
+                    SizedBox(width: 5,),
+                    Text("Search buses",style: GoogleFonts.montserrat(color: Colors.white,fontSize: 17,fontWeight: FontWeight.bold),)
+                  ],
+                ),),
+            ),
           ),
           
                   Padding(

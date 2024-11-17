@@ -7,7 +7,6 @@ import 'package:flutter_applicationclon/Redbuswallet_screen/Redbuswallet_screen.
 import 'package:flutter_applicationclon/booking_screen/booking_screen.dart';
 import 'package:flutter_applicationclon/utilis/color.dart';
 import 'package:flutter_applicationclon/utilis/images.dart';
-import 'package:flutter_applicationclon/utilis/text.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MyaccountScreen extends StatefulWidget {
@@ -21,6 +20,7 @@ class _MyaccountScreenState extends State<MyaccountScreen> {
   String? changevalue = "india";
   String? radiobatton = "English";
   String? Option = "YES";
+  String? radiob = "IND";
 
   @override
   Widget build(BuildContext context) {
@@ -300,22 +300,41 @@ class _MyaccountScreenState extends State<MyaccountScreen> {
                                     height: 15,
                                   ),
                                   Column(
-                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
                                     children: [
                                       Image.asset(imageconst.Star),
                                       Text(
                                         "Rate your experience with the redBus App",
                                         style: GoogleFonts.montserrat(),
                                       ),
-                                      SizedBox(height: 10,),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
                                       Row(
-                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
                                         children: [
-                                          Icon(Icons.star_border_outlined,size: 40,),
-                                          Icon(Icons.star_border_outlined,size: 40,),
-                                          Icon(Icons.star_border_outlined,size: 40,),
-                                          Icon(Icons.star_border_outlined,size: 40,),
-                                          Icon(Icons.star_border_outlined,size: 40,),
+                                          Icon(
+                                            Icons.star_border_outlined,
+                                            size: 40,
+                                          ),
+                                          Icon(
+                                            Icons.star_border_outlined,
+                                            size: 40,
+                                          ),
+                                          Icon(
+                                            Icons.star_border_outlined,
+                                            size: 40,
+                                          ),
+                                          Icon(
+                                            Icons.star_border_outlined,
+                                            size: 40,
+                                          ),
+                                          Icon(
+                                            Icons.star_border_outlined,
+                                            size: 40,
+                                          ),
                                         ],
                                       ),
                                     ],
@@ -433,43 +452,80 @@ class _MyaccountScreenState extends State<MyaccountScreen> {
                     InkWell(
                       onTap: () {
                         showBottomSheet(
-                          context: context,
-                          builder: (context) => Padding(
-                            padding: const EdgeInsets.all(15),
-                            child: Container(
-                              height: 200,
-                              child: DropdownButton(
-                                isExpanded: true,
-                                value: changevalue,
-                                hint: Text("Country"),
-                                items: List.generate(
-                                  textconst.COUNTRY.length,
-                                  (index) => DropdownMenuItem(
-                                    child: Row(
+                            context: context,
+                            builder: (context) => Container(
+                                  width: double.infinity,
+                                  height: 100,
+                                  child: Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 10),
+                                    child: Column(
                                       children: [
-                                        Image.asset(
-                                            height: 25,
-                                            width: 25,
-                                            imageconst.FLAG[index]),
-                                        SizedBox(
-                                          width: 15,
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Row(
+                                              children: [
+                                                Image.asset(
+                                                    height: 30,
+                                                    imageconst.IFLAG),
+                                                SizedBox(
+                                                  width: 5,
+                                                ),
+                                                Text(
+                                                  "India",
+                                                  style: GoogleFonts.montserrat(
+                                                      fontSize: 21,
+                                                      fontWeight:
+                                                          FontWeight.w400),
+                                                ),
+                                              ],
+                                            ),
+                                            Radio(
+                                              value: "IND",
+                                              groupValue: radiob,
+                                              onChanged: (value) {
+                                                print(value);
+                                                radiobatton = value;
+                                                setState(() {});
+                                              },
+                                            ),
+                                          ],
                                         ),
-                                        Text(textconst.COUNTRY[index]
-                                            .toUpperCase()),
+                                        Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Row(
+                                                children: [
+                                                  Image.asset(
+                                                    height: 20,
+                                                    imageconst.UFLAG),
+                                                    SizedBox(width: 5,),
+                                                  Text(
+                                                "united states",
+                                                style: GoogleFonts.montserrat(
+                                                    fontSize: 21,
+                                                    fontWeight: FontWeight.w400),
+                                              ),
+                                                ],
+                                              ),
+                                              Radio(
+                                                value: "INUSD",
+                                                groupValue: radiob,
+                                                onChanged: (value) {
+                                                  print(value);
+                                                  radiobatton = value;
+                                                  setState(() {});
+                                                },
+                                              ),
+                                            ],
+                                          ),
                                       ],
                                     ),
-                                    value: textconst.COUNTRY[index],
                                   ),
-                                ),
-                                onChanged: (value) {
-                                  changevalue = value;
-                                  print(value);
-                                  setState(() {});
-                                },
-                              ),
-                            ),
-                          ),
-                        );
+                                ));
                       },
                       child: Container(
                         height: 60,
