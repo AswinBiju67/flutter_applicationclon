@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_applicationclon/TrainTAB/train_bottomsreen.dart';
 import 'package:flutter_applicationclon/utilis/color.dart';
 import 'package:flutter_applicationclon/utilis/images.dart';
 import 'package:flutter_applicationclon/utilis/text.dart';
@@ -296,7 +297,12 @@ class _TraintabState extends State<Traintab> {
   Widget _Containersection(bool cbox) {
     return Padding(
       padding: const EdgeInsets.only(left: 12, right: 12, top: 30),
-      child: Container(
+      child: Stack(children: [
+        Positioned(
+          top: 30,
+          right: 50,
+          child: CircleAvatar(radius: 20,backgroundColor: Colors.black,child: Icon(Icons.swap_vert,color: Colors.white,),)),
+        Container(
         height: 350,
         width: double.infinity,
         decoration: BoxDecoration(
@@ -435,19 +441,24 @@ class _TraintabState extends State<Traintab> {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Container(
-                height: 50,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5),
-                    color: colorconst.PRIMARY),
-                child: Center(
-                  child: Text(
-                    "Search Train",
-                    style: GoogleFonts.montserrat(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 21,
-                        color: Colors.white),
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => TrainBottomsreen(),));
+                },
+                child: Container(
+                  height: 50,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5),
+                      color: colorconst.PRIMARY),
+                  child: Center(
+                    child: Text(
+                      "Search Train",
+                      style: GoogleFonts.montserrat(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 21,
+                          color: Colors.white),
+                    ),
                   ),
                 ),
               ),
@@ -468,6 +479,7 @@ class _TraintabState extends State<Traintab> {
           ],
         ),
       ),
+      ],)
     );
   }
 }

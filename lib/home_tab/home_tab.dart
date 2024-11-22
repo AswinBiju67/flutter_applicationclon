@@ -22,146 +22,202 @@ class _HomeTabState extends State<HomeTab> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(children: [
-         Padding(
-            padding: const EdgeInsets.all(10),
-            child: Text("Bus Tickets",style: GoogleFonts.montserrat(fontSize: 21,fontWeight: FontWeight.bold),),
-          ),
-         
-          Padding(
-            padding: const EdgeInsets.all(10),
-            child: Booking(),
-          ),
-
-
-          Padding(
-            padding: const EdgeInsets.all(10),
-            child: Container(
-              height: 50,
-              width: double.infinity,
-              decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              border: Border.all(color: Colors.black)
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+           Padding(
+              padding: const EdgeInsets.all(10),
+              child: Text("Bus Tickets",style: GoogleFonts.montserrat(fontSize: 21,fontWeight: FontWeight.bold),),
             ),
-            child: Padding(
-              padding: const EdgeInsets.only(left: 15,top: 5),
-              child: Row(
-                children: [
-                  Image.asset(
-                    height: 40,
-                    width: 25,
-                    imageconst.WOMEN),
-                    SizedBox(width: 10,),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text("Booking for women",style: GoogleFonts.montserrat(fontSize: 17),),
-                        RichText(text: TextSpan(text: "Know more",style: GoogleFonts.montserrat(
-                          color: Colors.blue,
-                          decoration: TextDecoration.underline,
-                          decorationThickness: 2,)),),
-                      ],
-                    ),
-                    SizedBox(width: 100,),
-                    Switch(value: state,
-                    activeColor: colorconst.PRIMARY, 
-                    onChanged: (value) {
-                    state=value;
-                    print(value);
-                    setState(() {
-                
-                   });
-            },),
-                ],
-              ),
-            ),),
-          ),
-         
-          Padding(
-            padding: const EdgeInsets.all(10),
-            child: InkWell(
-              onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => SearchbusScreen(),));
-              },
+           
+            Padding(
+              padding: const EdgeInsets.all(10),
+              child: Booking(),
+            ),
+        
+        
+            Padding(
+              padding: const EdgeInsets.all(10),
               child: Container(
                 height: 50,
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  color: colorconst.PRIMARY,
-                  borderRadius: BorderRadius.circular(25)
-                ),
+                borderRadius: BorderRadius.circular(10),
+                border: Border.all(color: Colors.black)
+              ),
+              child: Padding(
+                padding: const EdgeInsets.only(left: 15,top: 5),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(Icons.search,color: Colors.white,size: 20,),
-                    SizedBox(width: 5,),
-                    Text("Search buses",style: GoogleFonts.montserrat(color: Colors.white,fontSize: 17,fontWeight: FontWeight.bold),)
+                    Image.asset(
+                      height: 40,
+                      width: 25,
+                      imageconst.WOMEN),
+                      SizedBox(width: 10,),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("Booking for women",style: GoogleFonts.montserrat(fontSize: 17),),
+                          RichText(text: TextSpan(text: "Know more",style: GoogleFonts.montserrat(
+                            color: Colors.blue,
+                            decoration: TextDecoration.underline,
+                            decorationThickness: 2,)),),
+                        ],
+                      ),
+                      SizedBox(width: 100,),
+                      Switch(value: state,
+                      activeColor: colorconst.PRIMARY, 
+                      onChanged: (value) {
+                      state=value;
+                      print(value);
+                      setState(() {
+                  
+                     });
+              },),
                   ],
-                ),),
+                ),
+              ),),
             ),
-          ),
-          
-                  Padding(
-        padding: const EdgeInsets.all(10),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-        Text("Offers",style: GoogleFonts.montserrat(fontSize: 25,fontWeight: FontWeight.bold),),
-        Text("Get best deals with great offers",style: GoogleFonts.montserrat())
-              ],
+           
+            Padding(
+              padding: const EdgeInsets.all(10),
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => SearchbusScreen(),));
+                },
+                child: Container(
+                  height: 50,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: colorconst.PRIMARY,
+                    borderRadius: BorderRadius.circular(25)
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(Icons.search,color: Colors.white,size: 20,),
+                      SizedBox(width: 5,),
+                      Text("Search buses",style: GoogleFonts.montserrat(color: Colors.white,fontSize: 17,fontWeight: FontWeight.bold),)
+                    ],
+                  ),),
+              ),
             ),
-            RichText(text: TextSpan(text: "View all",style: GoogleFonts.montserrat(fontWeight: FontWeight.bold,fontSize: 17,color: Colors.blue,decoration: TextDecoration.underline,
-                          decorationThickness: 2,)))
-          ],
-        ),
-      ),
-      SizedBox(height: 10,),
-      _offersection(),
-     SizedBox(height: 10,),
-     Center(
-       child: AnimatedSmoothIndicator(    
-          activeIndex: activeIndex,    
-          count: 2,    
-          effect: WormEffect(), 
-       ),
-     ),
-     SizedBox(height: 15,),
-     
-    CarouselSlider(items: [
-       _Calendersection(),
-        _Livetickets()
-    ], options: CarouselOptions(
-      height: 300,
-        viewportFraction: 1,
-        initialPage: 0,
-        enableInfiniteScroll: true,
-        reverse: false,
-        autoPlay: false,
-        autoPlayInterval: Duration(seconds: 3),
-        autoPlayAnimationDuration: Duration(milliseconds: 800),
-        autoPlayCurve: Curves.fastOutSlowIn,
-        enlargeCenterPage: false,
-        enlargeFactor: 0.3,
-        onPageChanged: (index, reason) {
-          activeIndex2=index;
-          setState(() {
             
-          });
-        },
-        scrollDirection: Axis.horizontal,
-     ),),
-     Center(
-       child: AnimatedSmoothIndicator(    
-          activeIndex: activeIndex2,    
-          count: 2,    
-          effect: WormEffect(), 
-       ),
-     ),
-     
-      ],),
+                    Padding(
+          padding: const EdgeInsets.all(10),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+          Text("Offers",style: GoogleFonts.montserrat(fontSize: 25,fontWeight: FontWeight.bold),),
+          Text("Get best deals with great offers",style: GoogleFonts.montserrat())
+                ],
+              ),
+              RichText(text: TextSpan(text: "View all",style: GoogleFonts.montserrat(fontWeight: FontWeight.bold,fontSize: 17,color: Colors.blue,decoration: TextDecoration.underline,
+                            decorationThickness: 2,)))
+            ],
+          ),
+        ),
+        SizedBox(height: 10,),
+        _offersection(),
+             SizedBox(height: 10,),
+             Center(
+         child: AnimatedSmoothIndicator(    
+            activeIndex: activeIndex,    
+            count: 2,    
+            effect: WormEffect(), 
+         ),
+             ),
+             SizedBox(height: 15,),
+             
+            CarouselSlider(items: [
+         _Calendersection(),
+          _Livetickets()
+            ], options: CarouselOptions(
+        height: 300,
+          viewportFraction: 1,
+          initialPage: 0,
+          enableInfiniteScroll: true,
+          reverse: false,
+          autoPlay: false,
+          autoPlayInterval: Duration(seconds: 3),
+          autoPlayAnimationDuration: Duration(milliseconds: 800),
+          autoPlayCurve: Curves.fastOutSlowIn,
+          enlargeCenterPage: false,
+          enlargeFactor: 0.3,
+          onPageChanged: (index, reason) {
+            activeIndex2=index;
+            setState(() {
+              
+            });
+          },
+          scrollDirection: Axis.horizontal,
+             ),),
+             Center(
+         child: AnimatedSmoothIndicator(    
+            activeIndex: activeIndex2,    
+            count: 2,    
+            effect: WormEffect(), 
+         ),
+             ),
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text("Trending videos",style: GoogleFonts.montserrat(fontSize: 21,fontWeight: FontWeight.bold),),
+                    SizedBox(height: 10,),
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: [
+                          Image.asset(
+                            height: 200,
+                            imageconst.R1),
+                            SizedBox(width: 5,),
+                            Image.asset(
+                            height: 200,
+                            imageconst.R2),
+                        ],
+                      ),
+                    ),
+                     SizedBox(height: 10,),
+                    Text("What's new",style: GoogleFonts.montserrat(fontSize: 21,fontWeight: FontWeight.bold),)
+,                     SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: [
+                          Image.asset(
+                            fit: BoxFit.cover,
+                            height: 150,
+                            imageconst.S1),
+                            SizedBox(width: 5,),
+                            Image.asset(
+                            height: 150,
+                            imageconst.S2),
+                             Image.asset(
+                            height: 150,
+                            imageconst.S3),
+                             Image.asset(
+                            height: 150,
+                            imageconst.S4),
+                             Image.asset(
+                            height: 150,
+                            imageconst.S5),
+                             Image.asset(
+                            height: 150,
+                            imageconst.S6),
+                        ],
+                      ),
+                    ),                
+                  ],
+                ),
+              )
+        ],),
+      ),
 
     );
   }
@@ -384,14 +440,13 @@ class _HomeTabState extends State<HomeTab> {
                  ],
                ),),
                SizedBox(height: 10,),
-               Text("Authorised IRCTC partner",style: GoogleFonts.montserrat(),)
              ],
            ),
          ),
          ),
+         
        ],
      ),
-     
 
    );
   }

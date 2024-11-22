@@ -3,6 +3,7 @@ import 'package:flutter_applicationclon/GST_screen/GST_screen.dart';
 import 'package:flutter_applicationclon/KnowAboutRedbus_screnn/KnowAboutRedbus_screnn.dart';
 import 'package:flutter_applicationclon/Payments_screen/Payments_screen.dart';
 import 'package:flutter_applicationclon/Personalinfo_screen/Personalinfo_screen.dart';
+import 'package:flutter_applicationclon/Personalinfo_screen/passengers_screen.dart';
 import 'package:flutter_applicationclon/Redbuswallet_screen/Redbuswallet_screen.dart';
 import 'package:flutter_applicationclon/booking_screen/booking_screen.dart';
 import 'package:flutter_applicationclon/utilis/color.dart';
@@ -172,9 +173,14 @@ class _MyaccountScreenState extends State<MyaccountScreen> {
                     SizedBox(
                       height: 20,
                     ),
-                    DetailsREAC(
-                      Dicon: Icons.person_3,
-                      nam: "Passengers",
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => PassengersScreen(),));
+                      },
+                      child: DetailsREAC(
+                        Dicon: Icons.person_3,
+                        nam: "Passengers",
+                      ),
                     ),
                     SizedBox(
                       height: 30,

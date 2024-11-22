@@ -48,7 +48,17 @@ class imageconst{
  static const BUSTIC="assets/images/224.jpg";  
  static const BUSset1="assets/images/223.jpg";  
  static const BUSTI2="assets/images/222.jpg";  
-
+ static const T1="assets/images/311.jpg";
+ static const T2="assets/images/321.jpg";  
+ static const T3="assets/images/322.jpg";  
+ static const R1="assets/images/R!.jpg";  
+ static const R2="assets/images/R2.jpg";  
+ static const S1="assets/images/I6.jpg";  
+ static const S2="assets/images/I5.jpg";  
+ static const S3="assets/images/I4.jpg";  
+ static const S4="assets/images/I3.jpg";  
+ static const S5="assets/images/I2.jpg";  
+ static const S6="assets/images/I1.jpg";  
 
 }
 

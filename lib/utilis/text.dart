@@ -41,5 +41,9 @@ class textconst{
   "txt3":"SUPERB60"
  },
  ];
+ static const List off=["Filter","Sort","Free Cancellation","AC","SLEEPER","Single Seat","SEATER","NONAC","18:00 - 24:00",
+ "Hign Rated Buses","Live Ticket","Special price"];
+
+ static const List date=["Fri22","Sat23","Sun24","Mon25","Tue26","Wed27",];
   
 }

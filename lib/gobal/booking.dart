@@ -16,10 +16,14 @@ class _BookingState extends State<Booking> {
   Widget build(BuildContext context) {
     String from="";
     String to="";
-    return Stack(children: [
+    return SizedBox(height: 165,
+    width: double.infinity,
+    child: Stack(children: [
+       Positioned(
+          top: 30,
+          right: 50,
+          child: CircleAvatar(radius: 20,backgroundColor: Colors.black,child: Icon(Icons.swap_vert,color: Colors.white,),)),
       Container(
-      height: 165,
-      width: double.infinity,
       decoration: BoxDecoration(
       borderRadius: BorderRadius.circular(15),
       border: Border.all(color: Colors.black)
@@ -94,10 +98,10 @@ class _BookingState extends State<Booking> {
               ],
             ),
           ),
-        ),
-        
+        ), 
+       
       ],
     ),)
-    ],);
+    ],),);
   }
 }
