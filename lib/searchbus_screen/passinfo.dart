@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_applicationclon/bottmnaviscreen/bottmnaviscreen.dart';
 import 'package:flutter_applicationclon/home_screen/home_screen.dart';
 import 'package:flutter_applicationclon/utilis/color.dart';
 import 'package:flutter_applicationclon/utilis/text.dart';
@@ -257,7 +258,7 @@ class Passinfo extends StatelessWidget {
                     SizedBox(height: 10,),
                     InkWell(
                       onTap: () {
-                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomeScreen(),));
+                        Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => Bottmnaviscreen(),), (route) => false,);
                       },
                       child: Container(
                               width: double.infinity,

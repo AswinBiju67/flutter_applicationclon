@@ -17,7 +17,7 @@ class _HelpScreenState extends State<HelpScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey,
+      backgroundColor: Colors.grey.shade300,
       appBar: AppBar(title: Text("Red:Buddy",style: GoogleFonts.montserrat(
         color: colorconst.PRIMARY,fontWeight: FontWeight.bold),),
         actions: [Padding(

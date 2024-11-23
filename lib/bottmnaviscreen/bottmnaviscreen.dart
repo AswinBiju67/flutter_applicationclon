@@ -3,6 +3,7 @@ import 'package:flutter_applicationclon/booking_screen/booking_screen.dart';
 import 'package:flutter_applicationclon/help_screen/help_screen.dart';
 import 'package:flutter_applicationclon/home_screen/home_screen.dart';
 import 'package:flutter_applicationclon/myaccount_screen/myaccount_screen.dart';
+import 'package:flutter_applicationclon/utilis/color.dart';
 
 class Bottmnaviscreen extends StatefulWidget {
   const Bottmnaviscreen({super.key});
@@ -32,21 +33,20 @@ class _BottmnaviscreenState extends State<Bottmnaviscreen> {
      bottomNavigationBar: BottomNavigationBar(
       currentIndex: selectedindex,
       onTap: (value) {
-        print(value);
         selectedindex=value;
         setState(() {
 
         });
       },
       type: BottomNavigationBarType.fixed,
-      selectedItemColor: Colors.grey,
+      selectedItemColor: colorconst.PRIMARY,
       unselectedItemColor: Colors.grey,
         items:[
         BottomNavigationBarItem(
           icon: Icon(Icons.home_outlined),
           label: "Home"),
           BottomNavigationBarItem(
-          icon: Icon(Icons.check_box_outline_blank_outlined),
+          icon: Icon(Icons.book_outlined),
           label: "Booking"),
           BottomNavigationBarItem(
           icon: Icon(Icons.help_center_rounded),

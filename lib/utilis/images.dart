@@ -59,6 +59,8 @@ class imageconst{
  static const S4="assets/images/I3.jpg";  
  static const S5="assets/images/I2.jpg";  
  static const S6="assets/images/I1.jpg";  
-
+ static const swift="assets/images/swift1.jpeg";  
+ static const swift2="assets/images/swift2.jpg";  
+ static const pq="assets/images/pl.png";  
 }
 

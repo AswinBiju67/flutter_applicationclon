@@ -6,6 +6,9 @@ import 'package:flutter_applicationclon/Personalinfo_screen/Personalinfo_screen.
 import 'package:flutter_applicationclon/Personalinfo_screen/passengers_screen.dart';
 import 'package:flutter_applicationclon/Redbuswallet_screen/Redbuswallet_screen.dart';
 import 'package:flutter_applicationclon/booking_screen/booking_screen.dart';
+import 'package:flutter_applicationclon/myaccount_screen/account_seetingscreen.dart';
+import 'package:flutter_applicationclon/myaccount_screen/offer_screen.dart';
+import 'package:flutter_applicationclon/myaccount_screen/referrals_screen.dart';
 import 'package:flutter_applicationclon/utilis/color.dart';
 import 'package:flutter_applicationclon/utilis/images.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -246,16 +249,26 @@ class _MyaccountScreenState extends State<MyaccountScreen> {
                     SizedBox(
                       height: 20,
                     ),
-                    DetailsREAC(
-                      Dicon: Icons.tag,
-                      nam: "Offers",
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => OfferScreen(),));
+                      },
+                      child: DetailsREAC(
+                        Dicon: Icons.tag,
+                        nam: "Offers",
+                      ),
                     ),
                     SizedBox(
                       height: 20,
                     ),
-                    DetailsREAC(
-                      Dicon: Icons.share,
-                      nam: "Referrals",
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => ReferralsScreen(),));
+                      },
+                      child: DetailsREAC(
+                        Dicon: Icons.share,
+                        nam: "Referrals",
+                      ),
                     ),
                     SizedBox(
                       height: 20,
@@ -440,9 +453,14 @@ class _MyaccountScreenState extends State<MyaccountScreen> {
                     SizedBox(
                       height: 20,
                     ),
-                    DetailsREAC(
-                      Dicon: Icons.settings,
-                      nam: "Account settings",
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => AccountSeetingscreen(),));
+                      },
+                      child: DetailsREAC(
+                        Dicon: Icons.settings,
+                        nam: "Account settings",
+                      ),
                     ),
                     SizedBox(
                       height: 30,

@@ -16,7 +16,9 @@ class _BoardingScreenState extends State<BoardingScreen> {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
-        appBar: AppBar(actions: [ Padding(
+        appBar: AppBar(
+          backgroundColor: Colors.white,
+          actions: [ Padding(
           padding: const EdgeInsets.only(right: 130),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
