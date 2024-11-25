@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_applicationclon/autoorcabTAB/confirm_booking.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Autoorcab extends StatefulWidget {
@@ -51,26 +52,41 @@ class _AutoorcabState extends State<Autoorcab> {
               SizedBox(height: 5,),
               Text("Get quick rides at your doorstep",style: GoogleFonts.montserrat(fontSize: 17 ),),
               SizedBox(height: 15,),
-              Container(
-                height: 114,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  border: Border.all(color: Colors.black)
-                ),
-                child: Column(
-                  children: [
-                    TextField(decoration: InputDecoration(
-                      prefixIcon: Icon(Icons.location_history,size: 25,),
-                      hintText: "Pickup",hintStyle: GoogleFonts.montserrat( ),
-                      border: OutlineInputBorder(borderSide: BorderSide(color: Colors.black))
-                    ),),
-                     TextField(decoration: InputDecoration(
-                      prefixIcon: Icon(Icons.location_history,size: 25,),
-                      hintText: "Where to",hintStyle: GoogleFonts.montserrat( ),
-                      border: OutlineInputBorder(borderSide: BorderSide(color: Colors.black))
-                    ),),
-                  ],
+              InkWell(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => ConfirmBooking(),));
+                },
+                child: Container(
+                  height: 114,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(color: Colors.grey.shade500)
+                  ),
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(top: 15,left: 15,right: 15),
+                        child: Row(children: [
+                          Icon(Icons.place_outlined,size: 25,),
+                          SizedBox(width: 10,),
+                          Text("Pickup",style:  GoogleFonts.montserrat( fontSize: 15),)
+                        ],),
+                      ),
+                      SizedBox(height: 10,),
+                      Divider(color: Colors.grey.shade500,),
+                      SizedBox(height: 10,),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 15,right: 15),
+                        child: Row(children: [
+                          Icon(Icons.place_outlined,size: 25,),
+                          SizedBox(width: 10,),
+                          Text("Pickup",style:  GoogleFonts.montserrat( fontSize: 15),)
+                        ],),
+                      ),
+                      
+                    ],
+                  ),
                 ),
               ),
               SizedBox(height: 20,),

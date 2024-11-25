@@ -18,6 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
       initialIndex: 0,
       length: 4, child: Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.white,
       bottom: TabBar(
         tabAlignment: TabAlignment.start,
         isScrollable: true,

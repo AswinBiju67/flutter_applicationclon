@@ -41,6 +41,7 @@ class _BottmnaviscreenState extends State<Bottmnaviscreen> {
       type: BottomNavigationBarType.fixed,
       selectedItemColor: colorconst.PRIMARY,
       unselectedItemColor: Colors.grey,
+      backgroundColor: Colors.white,
         items:[
         BottomNavigationBarItem(
           icon: Icon(Icons.home_outlined),
